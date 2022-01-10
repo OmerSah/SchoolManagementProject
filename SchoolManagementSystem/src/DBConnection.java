@@ -12,10 +12,9 @@ import java.sql.*;
 public class DBConnection {
     private Connection conn;
     private static DBConnection dbConnection;
-
+    private String password;
+    
     private DBConnection() {
-        private String password;
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys", "root", this.password);
