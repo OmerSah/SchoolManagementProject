@@ -14,9 +14,11 @@ public class DBConnection {
     private static DBConnection dbConnection;
 
     private DBConnection() {
+        private String password;
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys", "root", "12345678");
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys", "root", this.password);
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Database Connection Creation Failed : " + ex.getMessage());
         }
